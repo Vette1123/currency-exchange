@@ -50,10 +50,10 @@ export const Result = () => {
     <div className="flex w-full px-8 md:p-0">
       {toExchangeValue && fromExchangeValue && amountExchangeValue && result ? (
         <>
-          <p className="text-2xl font-bold text-gray-800">
+          <p className="text-2xl font-bold">
             {amountExchangeValue} {fromExchangeValue} equals{' '}
           </p>
-          <p className="ml-2 text-2xl font-bold text-gray-800">
+          <p className="ml-2 text-2xl font-bold">
             <span>
               {isLoading ? (
                 <Loader className="mr-2 inline-flex h-6 w-6 shrink-0 animate-spin items-center justify-center opacity-80" />
@@ -65,7 +65,7 @@ export const Result = () => {
           </p>
         </>
       ) : (
-        <p className="text-2xl font-bold text-gray-800">
+        <p className="text-2xl font-bold text-slate-500">
           {isLoading ? (
             <Loader className="mr-2 inline-flex h-6 w-6 shrink-0 animate-spin items-center justify-center opacity-80" />
           ) : (
