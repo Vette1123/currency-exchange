@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { Check, ChevronsUpDown } from 'lucide-react'
@@ -32,7 +34,7 @@ export const Combobox = ({ listCurrencies, exchangeKey }: ComboboxProps) => {
   const { createQueryString } = useCreateQueryString()
   const router = useRouter()
 
-  const toggleExchangeKey = () => {
+  const toggledExchangeKeyValue = () => {
     if (exchangeKey === 'From') {
       return getExchangeValue('To')
     } else {
@@ -49,7 +51,7 @@ export const Combobox = ({ listCurrencies, exchangeKey }: ComboboxProps) => {
             variant="outline"
             role="combobox"
             className={cn(
-              'w-[200px] justify-between',
+              'w-full max-w-sm justify-between',
               exchangeKeyValueSTR && 'text-muted-foreground'
             )}
           >
@@ -61,7 +63,7 @@ export const Combobox = ({ listCurrencies, exchangeKey }: ComboboxProps) => {
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
+        <PopoverContent className="w-full max-w-sm p-0 lg:w-[200px]">
           <Command>
             <CommandInput placeholder="Search currency..." />
             <CommandEmpty>No currency found.</CommandEmpty>
@@ -72,10 +74,10 @@ export const Combobox = ({ listCurrencies, exchangeKey }: ComboboxProps) => {
                   key={currency}
                   className={cn(
                     'text-sm',
-                    currency === toggleExchangeKey() &&
+                    currency === toggledExchangeKeyValue() &&
                       'cursor-not-allowed opacity-50 hover:bg-transparent'
                   )}
-                  disabled={currency === toggleExchangeKey()}
+                  disabled={currency === toggledExchangeKeyValue()}
                   onSelect={() =>
                     router.push(`?${createQueryString(exchangeKey, currency)}`)
                   }

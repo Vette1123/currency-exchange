@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react'
 import { useSearchParams } from 'next/navigation'
 
+import { ExchangeKey } from '@/types/exchange'
+
 export const useCreateQueryString = () => {
   const searchParams = useSearchParams()
 
@@ -14,5 +16,7 @@ export const useCreateQueryString = () => {
     [searchParams]
   )
 
-  return { createQueryString }
+  const currentURL = new URLSearchParams(Array.from(searchParams.entries()))
+
+  return { createQueryString, currentURL }
 }
