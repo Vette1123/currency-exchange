@@ -3,6 +3,7 @@ import React from 'react'
 import { Combobox } from '@/components/combobox'
 import { AmountInput } from '@/components/exchange/amount-input'
 import { ResetButton } from '@/components/exchange/reset-button'
+import { Result } from '@/components/exchange/result'
 import { ToggleCurrency } from '@/components/exchange/toggle-currency'
 
 interface ExchangeInputsProps {
@@ -19,6 +20,7 @@ export const ExchangeInputs = ({ listCurrencies }: ExchangeInputsProps) => {
         <Combobox listCurrencies={listCurrencies} exchangeKey="To" />
       </section>
       <ResetButton />
+      <Result />
     </>
   )
 }

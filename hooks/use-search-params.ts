@@ -12,9 +12,15 @@ export const useSearchQueryParams = (exchangeKey?: ExchangeKey) => {
   const getExchangeValue = (key: ExchangeKey) => {
     return searchParams.get(key)
   }
+  const toExchangeValue = getExchangeValue('To')
+  const fromExchangeValue = getExchangeValue('From')
+  const amountExchangeValue = getExchangeValue('amount')
   return {
     amountQueryINT,
     exchangeKeyValueSTR,
     getExchangeValue,
+    toExchangeValue,
+    fromExchangeValue,
+    amountExchangeValue,
   }
 }

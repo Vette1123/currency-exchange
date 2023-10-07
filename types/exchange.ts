@@ -1,1 +1,1 @@
-export type ExchangeKey = 'From' | 'To'
+export type ExchangeKey = 'From' | 'To' | 'amount'

@@ -50,4 +50,14 @@ export const Icons = {
       <path d="M21 13v1a4 4 0 0 1-4 4H3" />
     </svg>
   ),
+  spinner: (props: LucideProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      className="lucide lucide-spinner animate-spin"
+      {...props}
+    >
+      <circle cx="50" cy="50" r="42" />
+    </svg>
+  ),
 }
