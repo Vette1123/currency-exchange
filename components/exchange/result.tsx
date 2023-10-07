@@ -34,8 +34,8 @@ export const Result = () => {
 
   const debouncedCallBack = useDebouncedCallback(async () => {
     await fetchExchangeResult()
-    // 1 second delay
-  }, 1000)
+    // 500ms delay
+  }, 500)
 
   React.useEffect(() => {
     debouncedCallBack()
